@@ -1,0 +1,545 @@
+ERROR - 2026-11-04 12:49:18 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#4 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#10 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#3 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#7 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+CRITICAL - 2026-11-04 12:49:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amount`) AS `amount`
+FROM `payments`
+WHERE `payment_status` = :payment_status:
+AND DATE(paid_at) = :DATE(paid_at):
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(712): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\barber\\public\\index.php')
+ERROR - 2026-11-04 12:50:14 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#4 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#10 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#3 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#7 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+CRITICAL - 2026-11-04 12:50:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amount`) AS `amount`
+FROM `payments`
+WHERE `payment_status` = :payment_status:
+AND DATE(paid_at) = :DATE(paid_at):
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(712): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\barber\\public\\index.php')
+ERROR - 2026-11-04 12:50:15 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#4 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#10 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#3 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#7 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+CRITICAL - 2026-11-04 12:50:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amount`) AS `amount`
+FROM `payments`
+WHERE `payment_status` = :payment_status:
+AND DATE(paid_at) = :DATE(paid_at):
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(712): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\barber\\public\\index.php')
+ERROR - 2026-11-04 12:50:48 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#4 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#10 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#3 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#7 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+CRITICAL - 2026-11-04 12:50:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amount`) AS `amount`
+FROM `payments`
+WHERE `payment_status` = :payment_status:
+AND DATE(paid_at) = :DATE(paid_at):
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(712): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\barber\\public\\index.php')
+ERROR - 2026-11-04 12:52:05 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#4 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#10 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#3 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#7 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+CRITICAL - 2026-11-04 12:52:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amount`) AS `amount`
+FROM `payments`
+WHERE `payment_status` = :payment_status:
+AND DATE(paid_at) = :DATE(paid_at):
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(712): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\barber\\public\\index.php')
+ERROR - 2026-11-04 12:59:37 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#4 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#10 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#3 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#7 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+CRITICAL - 2026-11-04 12:59:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amount`) AS `amount`
+FROM `payments`
+WHERE `payment_status` = :payment_status:
+AND DATE(paid_at) = :DATE(paid_at):
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(712): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\barber\\public\\index.php')
+ERROR - 2026-11-04 12:59:38 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#4 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#10 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#3 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#7 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+CRITICAL - 2026-11-04 12:59:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amount`) AS `amount`
+FROM `payments`
+WHERE `payment_status` = :payment_status:
+AND DATE(paid_at) = :DATE(paid_at):
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(712): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\barber\\public\\index.php')
+ERROR - 2026-11-04 12:59:39 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#4 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#10 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#3 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#7 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+CRITICAL - 2026-11-04 12:59:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amount`) AS `amount`
+FROM `payments`
+WHERE `payment_status` = :payment_status:
+AND DATE(paid_at) = :DATE(paid_at):
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(712): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\barber\\public\\index.php')
+ERROR - 2026-11-04 13:04:07 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'barbershop_db' in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'barbershop_db', 3307, '', 0)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#4 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#10 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'barbershop_db' in C:\wamp64\www\barber\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\barber\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\barber\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\barber\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amo...', Array, false)
+#3 C:\wamp64\www\barber\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\barber\system\BaseModel.php(712): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\barber\app\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\barber\app\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+#7 C:\wamp64\www\barber\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#8 C:\wamp64\www\barber\system\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#9 C:\wamp64\www\barber\system\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\barber\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\barber\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\barber\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\barber\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+CRITICAL - 2026-11-04 13:04:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'barbershop_db'
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`amount`) AS `amount`
+FROM `payments`
+WHERE `payment_status` = :payment_status:
+AND DATE(paid_at) = :DATE(paid_at):
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(712): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\PaymentModel.php(19): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Admin\Dashboard.php(20): App\Models\PaymentModel->getTodayRevenue()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\barber\\public\\index.php')
+DEBUG - 2026-11-04 14:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-11-04 14:20:57 --> Error: Class "App\Controllers\Admin\UserModel" not found
+[Method: POST, Route: admin/profile/update]
+in APPPATH\Controllers\Admin\Dashboard.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->updateProfile()
+ 2 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 3 SYSTEMPATH\CodeIgniter.php(322): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\barber\\public\\index.php')
+DEBUG - 2026-11-04 14:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:24:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:24:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:29:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:29:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:30:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:33:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:35:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:35:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:35:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:44:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:46:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 14:53:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 15:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 15:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 15:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-04 15:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
